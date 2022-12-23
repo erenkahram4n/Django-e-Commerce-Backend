@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="erenkahram4n">
+    <link rel="icon" href="{% static 'favicon.png' %}">
+    <title>kahram4n | Bize Ulaşın</title>
+    <!-- FONT AWESOME -->
+    <script
+      src="https://kit.fontawesome.com/c4137ec608.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS only (BOOTSTRAP) -->
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <!-- My CSS-->
+    <link rel="stylesheet" href="/static/styleform.css">
+</head>
+<body>
+    {% include "includes/navbar.html" %}
+    {% if messages %}
+    {% for i in messages %}
+    <div class="alert alert-{{i.tags}} text-center mt-5">
+      {{i}}
+    </div>
+    {% endfor %}
+  {% endif %}
+      <!-- Content -->
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-md-9">
+            <form id="contact" method='POST'>
+              {% csrf_token %}
+              <div class="row">
+              <div class="form-group col-md-3">
+                <label for="exampleFormControlInput1">İsim<b style="color:red; font-size:13px;">*</b></label>
+                <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="İsminiz">
+              </div>
+              <div class="col-md-3">
+                <label>Kullanıcı Adı<b style="color:red; font-size:13px;">*</b></label>
+                <label class="sr-only" for="inlineFormInputGroupUsername">K. Adı</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">@</div>
+                  </div>
+                  <input type="text" name="username" class="form-control" id="inlineFormInputGroupUsername" placeholder="K. Adı">
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="exampleFormControlInput1">e-Posta<b style="color:red; font-size:13px;">*</b></label>
+                <input type="email" name="email" class="form-control" id="exampleFormControlInput2" placeholder="Örneğin: erenkahram4n@gmail.com">
+                <small style="font-size:13px;color:grey;">Size mail üzerinden yanıt gelecektir! Lütfen doğru adres girdiğinizden emin olun!</small>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Konu Seçiniz</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>İstek/Öneri</option>
+                  <option>Şikayet</option>
+                  <option>Hata Uyarısı</option>
+                  <option>Site kullanımı</option>
+                  <option>Diğer</option>
+                </select>
+              </div>
+              </div>
+              <div class="row mt-3">
+              <div class="form-group col-md-6">
+                <label for="exampleFormControlTextarea1">Açıklama<b style="color:red; font-size:13px;">*</b></label>
+                <textarea class="form-control" name="text" id="exampleFormControlTextarea1" placeholder="Eklemek istediklerinizi giriniz.." rows="3"></textarea>
+              </div>
+                <div class="form-group col-md-6 mt-3 text-center"><br>
+                  <label for="exampleFormControlFile1 col-7">Dosya Seçiniz (Zorunlu Değil)</label><br>
+                  <input type="file" class="form-control-file col-6" id="exampleFormControlFile1">
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-auto mt-4 m-auto">
+                <button type="submit" form="contact" class="btn btn-success">Gönder</button>
+              </div>
+            </div>
+            </form>
+          </div>
+          <div class="col-md-3">
+            <fieldset class="address">
+              <legend class="fw-bold">İletişim Bilgilerimiz</legend>
+              <h5>kahram4n e-Ticaret</h5>
+              <address>Cevizlidere Mahallesi, 1247. Sokak, No:12/5 <br> Çankaya/Ankara</address>
+              <p>Mail: erenkahram4n@gmail.com</p>
+              <p>Tel: 0545 668 28 56</p>
+              <p>Faks: 0545 668 28 56</p>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+     {% include "includes/footer.html" %} 
+      
+      <!-- JavaScript Bundle with Popper (BOOTSTRAP)-->
+      <script src="{% static 'bootstrap.bundle.min.js' %}"></script>
+
+      <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    </body>
+    </html>

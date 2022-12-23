@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="erenkahram4n">
+    <link rel="icon" href="{% static 'favicon.png' %}">
+    <title>kahram4n | Sepetim</title>
+    <!-- FONT AWESOME -->
+    <script
+      src="https://kit.fontawesome.com/c4137ec608.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- CSS only (BOOTSTRAP) -->
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <!-- My CSS-->
+    <link rel="stylesheet" href="/static/stylesepet.css">
+</head>
+<body>
+   {% include "includes/navbar.html" %}
+      <!-- Content -->
+      <div class="container-fluid background px-0">
+        <div class="container-fluid containernav p-2 text-center">
+          <h6 class="text-white"><i class="fa-sharp fa-solid fa-cart-shopping me-3 text-success"></i>Sepetimdeki Ürünler</h6>
+        </div>
+        <div class="container-fluid containernav2 p-2 row">
+            <div class="col-5 text-center">
+              <h6 class="text-black d-inline text-center">Ürün</h6>
+            </div>
+            <div class="col-2 me-3">
+              <h6 class="text-black d-inline">Fiyat</h6>
+            </div>
+            <div class="col-3">
+              <h6 class="text-black d-inline">Adet</h6>
+            </div>
+            <div class="col-1">
+              <h6 class="text-black d-inline">Toplam</h6>
+            </div>
+        </div>
+        <h3 id="bos" class="text-center">Sepetinizde Ürün Bulunmamaktadır!</h3>
+        <div class="row">
+          <div class="col-11" id="urun5">
+            <div class="photo col-5 text-center"><img src="{% static 'unisex.png' %}" alt="..">
+              <div class="urunaciklamasi"><h5 class="d-inline me-2 marka">Fila</h5><small class="d-inline" id="info5">Unisex Spor Ayakkabı</small>
+              </div>
+            </div>
+            <span class="urunfiyati col-2">
+              <small class="fs-6 fw-bolder">400.00 ₺</small>
+            </span>
+            <span class="urunadeti col-3">
+              <button id="arttir4" class="d-inline button1"><b>+</b></button>
+              <input id="adet4" type="text" disabled value=1 class="urunsayisi text-center">
+              <button id="azalt4" class="d-inline button2"><b>-</b></button>
+            </span>
+            <span class="toplamfiyat col-2 text-center">
+              <small class="fw-bold fs-4" class="toplam" id="toplam4">400.00 ₺</small>
+              <button class="dell" id="dell5"><i class="fa-regular fa-trash-can"></i></button>
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-11" id="urun1">
+            <div class="photo col-5 text-center"><img src="{% static 'kargopantolon.png' %}" alt="..">
+              <div class="urunaciklamasi"><h5 class="d-inline me-2 marka">DeFacto</h5><small class="d-inline" id="info1">Kargo Pantolon</small>
+              </div>
+            </div>
+            <span class="urunfiyati col-2">
+              <small class="fs-6 fw-bolder">199.99 ₺</small>
+            </span>
+            <span class="urunadeti col-3">
+              <button id="arttir" class="d-inline button1"><b>+</b></button>
+              <input id="adet" type="text" disabled value=1 class="urunsayisi text-center">
+              <button id="azalt" class="d-inline button2"><b>-</b></button>
+            </span>
+            <span class="toplamfiyat col-2 text-center">
+              <small class="fw-bold fs-4" class="toplam" id="toplam">199.99 ₺</small>
+              <button class="dell" id="dell1"><i class="fa-regular fa-trash-can"></i></button>
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-11" id="urun2">
+            <div class="photo col-5 text-center"><img src="{% static 'etek.png' %}" alt="..">
+              <div class="urunaciklamasi"><h5 class="d-inline me-2 marka">Koton</h5><small class="d-inline"  id="info2">Mavi Mini Etek</small>
+              </div>
+            </div>
+            <span class="urunfiyati col-2">
+              <small class="fs-6 fw-bolder">101.99 ₺</small>
+            </span>
+            <span class="urunadeti col-3">
+              <button id="arttir1" class="d-inline button1"><b>+</b></button>
+              <input id="adet1" type="text" disabled value=1 class="urunsayisi text-center">
+              <button id="azalt1" class="d-inline button2"><b>-</b></button>
+            </span>
+            <span class="toplamfiyat col-2 text-center">
+              <small class="fw-bold fs-4" class="toplam" id="toplam1">101.99 ₺</small>
+              <button class="dell" id="dell2"><i class="fa-regular fa-trash-can"></i></button>
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-11" id="urun3">
+            <div class="photo col-5 text-center"><img src="{% static 'gomlek.png' %}" alt="..">
+              <div class="urunaciklamasi"><h5 class="d-inline me-2 marka">LC Waikiki</h5><small class="d-inline" id="info3">Erkek Gömlek</small>
+              </div>
+            </div>
+            <span class="urunfiyati col-2">
+              <small class="fs-6 fw-bolder">150.00 ₺</small>
+            </span>
+            <span class="urunadeti col-3">
+              <button id="arttir2" class="d-inline button1"><b>+</b></button>
+              <input id="adet2" type="text" disabled value=1 class="urunsayisi text-center">
+              <button id="azalt2" class="d-inline button2"><b>-</b></button>
+            </span>
+            <span class="toplamfiyat col-2 text-center">
+              <small class="fw-bold fs-4" class="toplam" id="toplam2">150.00 ₺</small>
+              <button class="dell" id="dell3"><i class="fa-regular fa-trash-can"></i></button>
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-11" id="urun4">
+            <div class="photo col-5 text-center"><img src="{% static 'nike.png' %}" alt="..">
+              <div class="urunaciklamasi"><h5 class="d-inline me-2 marka">Nike</h5><small class="d-inline"  id="info4">Erkek Spor Ayakkabı</small>
+              </div>
+            </div>
+            <span class="urunfiyati col-2">
+              <small class="fs-6 fw-bolder">400.00 ₺</small>
+            </span>
+            <span class="urunadeti col-3">
+              <button id="arttir3" class="d-inline button1"><b>+</b></button>
+              <input id="adet3" type="text" disabled value=1 class="urunsayisi text-center">
+              <button id="azalt3" class="d-inline button2"><b>-</b></button>
+            </span>
+            <span class="toplamfiyat col-2 text-center">
+              <small class="fw-bold fs-4 toplam" id="toplam3">400.00 ₺</small>
+              <button class="dell" id="dell4"><i class="fa-regular fa-trash-can"></i></button>
+            </span>
+          </div>
+        </div>
+        <div class="row mb-3 altbutonlar px-5 d-flex justify-content-between">
+          <div class="col-4 text-center">
+            <button id="odeme" class="odemeyegec">Alışverişi Tamamla</button>
+          </div>
+            <div class="col-4 text-center">
+            <button class="del" id="delete">Sepeti Boşalt</button>
+          </div>
+        </div>
+      </div>
+{% include "includes/footer.html" %}
+    
+    <!-- JavaScript Bundle with Popper (BOOTSTRAP)-->
+    <script src="{% static 'bootstrap.bundle.min.js' %}"></script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <!-- My JS -->
+    <script src="{% static 'scriptsepet.js' %}"></script>
+</body>
+</html>

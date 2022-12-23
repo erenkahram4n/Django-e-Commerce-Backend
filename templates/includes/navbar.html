@@ -1,0 +1,91 @@
+{% load static %}
+<!-- NavBar -->
+<div class="container-fluid p-0 navbarall">
+    <!-- NavBar Top -->
+    <nav class="navbar navbar-expand bg-black navbar-dark"> 
+      <div class="container-fluid px-0">
+        <div class=" container collapse navbar-collapse row text-center m-auto" id="navbarNav">
+          <ul class="navbar-nav row-cols-lg-6 text-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/"><i class="fa-solid fa-house me-2"></i>Anasayfa</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'olustur' %}"><i class="fa-solid fa-plus me-2 d-none d-sm-inline-block"></i>Ürün Yükle</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'register' %}"><i class="fa-solid fa-user-plus me-2 d-none d-sm-inline-block"></i>Kaydol</a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                  <a class="nav-link d-none d-sm-block" href="#"><i class="fa-solid fa-circle-info me-2 d-none d-sm-inline-block"></i>Hakkımızda</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'contact' %}"><i class="fa-solid fa-headset me-2 d-none d-sm-inline-block"></i>Bize Ulaşın</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-none d-md-block" href="#"><i class="fa-solid fa-bullseye me-2"></i>Misyonumuz</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link d-none d-md-block" href="#"><i class="fa-solid fa-question me-2"></i>Sıkça Sorulan Sorular</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- NavBar Bottom -->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+          <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img class="logo" src="{% static 'logo.png' %}" alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-user me-1"></i>{{request.user}}</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'login' %}"><i class="fa-solid fa-user me-1"></i>Giriş Yap</a>
+            </li>
+            {% endif %}
+            <li class="nav-item">
+              <a class="nav-link mx-3" href="#"><i class="fa-solid fa-tag me-1"></i>Ürünler</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/sepetim/"><i class="fa-sharp fa-solid fa-cart-shopping me-1"></i>Sepetim</a>
+            </li>
+            <li class="nav-item dropdown mx-3">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-hashtag me-1"></i>İletişim
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#"><i class="fa-brands fa-instagram me-2 text-danger"></i>İnstagram</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-brands fa-twitter me-2 text-info"></i>Twitter</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-brands fa-amazon me-2 text-primary"></i>Amazon</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-brands fa-ebay me-2 text-success"></i>eBay</a></li>
+              </ul>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket me-1"></i>Çıkış Yap</a>
+            </li>
+          </ul>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="#"></a>
+            </li>
+          </ul>
+            {% endif %}
+          <form class="d-flex searchbar" action="{% url 'index' %}" method="GET" role="search">
+            <input class="form-control me-2" name="search" type="search" value="{{search}} " placeholder="Ürün veya Mağaza Bul" aria-label="Search">
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>

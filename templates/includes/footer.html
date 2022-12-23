@@ -1,0 +1,57 @@
+{% load static %}
+  <!-- footer -->
+  <footer class="container-fluid text-center mt-5 p-0">
+    <nav class="navbar footer-top justify-content-evenly px-5">
+      <a class="navbar-brand" href="/"><img class="logo" src="{% static 'logo.png' %}" alt="logo"></a>
+      <a class="nav-link" href="#"><img class="logo1" src="{% static 'turkiye.png' %}" alt="turkiye"><br>Şubelerimiz</a>
+      <a class="nav-link" href="#"><img class="logo2" src="{% static 'magaza.png' %}" alt="turkiye"><br>Mağazalarımız</a>
+      <a class="nav-link" href="#"><img class="logo3" src="{% static 'sponsor.jpg' %}" alt="turkiye"><br>Sponsorlarımız</a>
+      <form method="GET" action="{% url 'index' %}" class="form-inline">
+        <input class="form-control mr-sm-2 srch" name="search" value="{{search}}" type="search" placeholder="Arama Yap" aria-label="Search">
+      </form>
+    </nav>
+    <div class="row py-5">
+      <div class="col-lg-3 col-6">
+        <ul class="navbar-nav">
+          <li><h3 class="nav-link footer-header">Hakkımızda</h3></li>
+          <li><a href="#" class="nav-link footer-links">Biz Kimiz</a></li>
+          <li><a href="#" class="nav-link footer-links">Kariyer</a></li>
+          <li><a href="#" class="nav-link footer-links">İş İlanları</a></li>
+          <li><a href="#" class="nav-link footer-links">Vizyonumuz & Misyonumuz</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-6">
+        <ul class="navbar-nav">
+          <li><h3 class="nav-link footer-header">Hesap</h3></li>
+          <li><a href="#" class="nav-link footer-links">Hesap Güvenliği</a></li>
+          <li><a href="#" class="nav-link footer-links">Ticari Üyelik</a></li>
+          <li><a href="#" class="nav-link footer-links">Kullanım Koşulları</a></li>
+          <li><a href="#" class="nav-link footer-links">Yasal Hükümler</a></li>
+          <li><a href="#" class="nav-link footer-links">Çerez Tercihleri</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-6">
+        <ul class="navbar-nav">
+          <li><h3 class="nav-link footer-header">Kampanyalar</h3></li>
+          <li><a href="#" class="nav-link footer-links">Hediye Çeki Kullan</a></li>
+          <li><a href="#" class="nav-link footer-links">Aktif Kampanyalar</a></li>
+          <li><a href="#" class="nav-link footer-links">İndirimli Ürünler</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-6">
+        <ul class="navbar-nav">
+          <li><h3 class="nav-link footer-header">Destek Merkezi</h3></li>
+          <li><a href="#" class="nav-link footer-links">Canlı Destek</a></li>
+          <li><a href="#" class="nav-link footer-links">Sıkça Sorulan Sorular</a></li>
+          <li><a href="#" class="nav-link footer-links">İşlem Rehberi</a></li>
+          <li><a href="#" class="nav-link footer-links">Nasıl İade Yapabilirim?</a></li>
+          <li><a href="/bizeulasin/" class="nav-link footer-links">Bize Ulaşın</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row bottom pb-3">
+      <div class="col">
+        <small>Copyright © 2022 Tüm Hakları Saklıdır. (erenkahram4n)</small>
+      </div>
+    </div>
+  </footer>

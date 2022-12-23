@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+          {% for i in urun %}
+          <div class="card text-center bg-opacity-25 bg-light">
+            <div class="card-header">
+              {{i.marka}}
+            </div>
+            <div class="card-body">
+              <p class="card-text"><small style="font-size:16.5px;">{{i.kategori.isim}} ➔ </small>{% for i in i.altKategori.all %}
+                <small style="font-size:16.5px;">{{i.isim}}</small></h5>
+                {% endfor %}<br>{{i.urunAciklama}}</p>
+                {% if i.urunResmi %}
+              <img style="height:450px;" src="{{i.urunResmi.url}}" class="card-img-overlay m-auto rounded-5" alt="giyim">
+              {% else %}
+              <img style="width:300px;" src="{% static 'empty.jpg' %}" class="card-img-overlay m-auto rounded-5" alt="giyim">
+              {% endif %}
+              <p class="card-text price text-success"> <del class="text-danger me-2">{{i.eskiFiyat}}
+                ₺</del>{{i.indirimliFiyat}}₺</p>
+              <a href="#" class="btn btn-success mb-4">Sepete Ekle</a>
+            </div>
+            <div class="card-footer text-muted">
+              Fırsat Ürünü
+            </div>
+          </div>
+          {% endfor %}
+{% endblock content %}

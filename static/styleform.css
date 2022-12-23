@@ -1,0 +1,130 @@
+/* reset */
+html{
+    height: 100%;
+    scroll-behavior: smooth;
+}
+html,body{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: burlywood;
+}
+*{
+    box-sizing: border-box;
+}
+/* NavBar */
+.logo{
+    width: 150px;
+}
+.contact{
+    border-radius: 5px;
+}
+/* Content */
+form{
+    margin-top: 30px;
+}
+.address{
+    margin-top: 30px;
+}
+fieldset{
+    padding: 0px;
+    position: relative;
+}
+fieldset textarea{
+    height: 70px;
+    margin-block: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 50px;
+}
+fieldset input{
+    margin-block: 10px;
+    border-radius: 7px;
+    border: none;
+}
+.submit{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+.isim, .e-posta{
+    width: 49.7%;
+}
+/* Footer */
+footer{
+    text-align: center;
+}
+footer p, .footer-links, .p-footer{
+    color:white;
+    text-align: center;
+}
+footer .footer-links:hover{
+    color:black;
+    text-decoration: underline;
+}
+footer .row{
+    background-color:  rgba(32, 30, 30, 0.411);
+    width: 100%;
+    margin: 0;
+}
+.footer-top{
+    background-color: rgba(32, 30, 30, 0.411);
+    margin-bottom: 10px;
+    margin-inline: 25px;
+    border-radius: 20px;
+}
+footer .footer-header{
+    font-weight: bold;
+    color: black;
+    font-size: 120%;
+    user-select: none;
+}
+footer .footer-header:hover{
+    color:black;
+}
+.bottom{
+    user-select: none;
+}
+footer img{
+    margin-inline: 10px;
+}
+footer .logo1{
+    width: 167px;
+}
+footer .logo2{
+    width: 100px;
+}
+footer .logo3{
+    width: 100px;
+}
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: burlywood;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+/* responsive */
+@media screen and (max-width:992px) {
+    .address{
+        text-align: center;
+    }
+}
+@media screen and (max-width:768px) {
+    .isim,.e-posta{
+        width: 100%;
+    }
+}
+@media screen and (max-width:575px) {
+    .srch{
+        margin-top: 20px;
+    }
+}
